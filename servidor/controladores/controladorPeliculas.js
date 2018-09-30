@@ -3,7 +3,7 @@ var con = require("../lib/conexionbd.js")
 
 function mostrarPeliculas(req, res, fields){
 
-    var sql = "select * from pelicula";
+    var sql = "select * from pelicula LIMIT 0,10";
 
     con.query(sql, function(error, response, fields){
         if(error)
