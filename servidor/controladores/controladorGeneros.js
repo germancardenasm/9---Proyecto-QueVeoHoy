@@ -3,7 +3,7 @@ var con = require("../lib/conexionbd.js")
 
 function cargarGeneros(req, res, fields){
 
-    var sql = "select * from genero limit 0, 10;";
+    var sql = "select * from genero;";
     console.log("Entro a la funcion de contriladorGeneros");
     con.query(sql, function(error, response, fields){
         debugger;
