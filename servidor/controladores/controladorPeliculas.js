@@ -12,11 +12,17 @@ function mostrarPeliculas(req, res, fields){
     if(titulo)
         sql += "titulo LIKE \"%" + titulo + "%\""; 
 
-    if(genero)
-         sql += " AND genero = " + genero;
+    if(genero){
+            if(titulo)
+                sql += " AND"
+        sql += " genero_id = " + genero ;
+    }
 
-    if(anio)
-        sql += " AND anio = " + anio;
+    if(anio){
+            if(titulo || genero)
+                sql += " AND"
+        sql += " anio = " + anio;
+    }
 
     sql += ";"
     //var sql = "select * from pelicula where "+titulo+ " "+genero+ " " +anio + ";";
