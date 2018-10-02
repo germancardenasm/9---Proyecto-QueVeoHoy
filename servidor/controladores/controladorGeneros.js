@@ -6,7 +6,6 @@ function cargarGeneros(req, res, fields){
     var sql = "select * from genero;";
     console.log("Entro a la funcion de contriladorGeneros");
     con.query(sql, function(error, response, fields){
-        debugger;
         if(error)
            { 
                console.log("Error al recibir listado de generos");
