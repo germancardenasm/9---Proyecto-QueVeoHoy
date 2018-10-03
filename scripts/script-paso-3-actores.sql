@@ -1,5 +1,4 @@
 
-
 INSERT INTO `actor` (`id`, `nombre`)
 VALUES
 	(1,'A.J. Cook'),
