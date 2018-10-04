@@ -69,7 +69,7 @@ function ControladorRecomendaciones() {
         //se le asigna funcionalidad al boton "Otra opcion" que se va a mostrar debajo de la pelicula recomendada.
         //este boton muestra otra pelicula como recomendacion
         $(".botones-resultado .otra-opcion").click(function() {
-            self.seleccionarPelicula();
+            //self.();
         });
 
         //se le asigna funcionalidad al boton "Volver" que va a reiniciar la recomendacion
@@ -127,8 +127,8 @@ function ControladorRecomendaciones() {
                 var peliculas_desordenadas = self.desordenarArray(data.peliculas);
                 //se guardan las peliculas desordenadas
                 self.resultados = peliculas_desordenadas;
-                // se ejecuta la funcion seleccionarPelicula() 
-                self.seleccionarPelicula();
+                // se ejecuta la funcion () 
+                //self.();
             });
 
     }

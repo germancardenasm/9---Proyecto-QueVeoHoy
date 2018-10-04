@@ -1,12 +1,13 @@
 var con = require("../lib/conexionbd.js")
 
-
-function obtenerDetallePelicula(req, res, fields){
-
-    var id = req.params.id;
-    var sql = "";
+function recomendarSegunSeleccion(req, res, fields){
     var sqlSelectPelicula = "select * from pelicula where id = " + id;
-
+    var genero;
+    var anio_inicio;
+    var anio_fin;
+    var resultados;
+    var puntuacion;
+    var pelicula_actual;
    
 
     con.query(sqlSelectPelicula, function(error, response, fields){
@@ -46,6 +47,8 @@ function obtenerDetallePelicula(req, res, fields){
                 })
     })
 }
+
+
 module.exports = {
-    obtenerDetallePelicula: obtenerDetallePelicula
+    recomendarSegunSeleccion: recomendarSegunSeleccion
 };
