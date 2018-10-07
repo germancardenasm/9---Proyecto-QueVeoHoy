@@ -128,7 +128,7 @@ function ControladorRecomendaciones() {
                 //se guardan las peliculas desordenadas
                 self.resultados = peliculas_desordenadas;
                 // se ejecuta la funcion () 
-                //self.();
+                self.seleccionarPelicula();
             });
 
     }
