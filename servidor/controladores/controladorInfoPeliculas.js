@@ -7,6 +7,9 @@ function obtenerDetallePelicula(req, res, fields){
     var sql = "";
     var sqlSelectPelicula = "select * from pelicula where id = " + id;
 
+    if(id == "recomendacion"){
+        return controladorRecomendacion.recomendarCualquiera;
+    }
    
 
     con.query(sqlSelectPelicula, function(error, response, fields){

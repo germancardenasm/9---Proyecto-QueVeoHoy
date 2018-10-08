@@ -39,6 +39,7 @@ function ControladorRecomendaciones() {
         });
 
         $(".paso-1 .boton-cualquiera").click(function() {
+            self.reiniciarRecomendacion();
             self.cargarSegundaPregunta();
         });
 
@@ -69,7 +70,7 @@ function ControladorRecomendaciones() {
         //se le asigna funcionalidad al boton "Otra opcion" que se va a mostrar debajo de la pelicula recomendada.
         //este boton muestra otra pelicula como recomendacion
         $(".botones-resultado .otra-opcion").click(function() {
-            //self.();
+            self.seleccionarPelicula();
         });
 
         //se le asigna funcionalidad al boton "Volver" que va a reiniciar la recomendacion
@@ -101,6 +102,7 @@ function ControladorRecomendaciones() {
 
         if (this.genero)
             query_params.genero = this.genero;
+        
 
         if (this.anio_inicio)
             query_params.anio_inicio = this.anio_inicio;
@@ -178,7 +180,7 @@ function ControladorRecomendaciones() {
             this.anio_inicio = "";
             this.genero = "";
             this.puntuacion = "";
-            //se ocultan los datos de las películas
+            //se ocultan los datos de las    
             $(".datos-pelicula").hide();
             //se muestra el paso 1 de la recomendacion
             $(".paso-1, .pregunta").show();

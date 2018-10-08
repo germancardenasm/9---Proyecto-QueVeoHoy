@@ -18,13 +18,13 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
-app.get("/peliculas/recomendacion?", controladorRecomendacion.recomendarSegunSeleccion);
+
+//app.get("/peliculas/recomendacion?", controladorRecomendacion.recomendarSegunSeleccion);
+app.get("/peliculas/recomendacion", controladorRecomendacion.recomendador);
 app.get("/peliculas/:id/", controladorInfoPeliculas.obtenerDetallePelicula);
 app.get("/peliculas?", controladorPeliculas.mostrarPeliculas);
 app.get("/generos", controladorGeneros.cargarGeneros);
 
-
-//app.get("/peliculas/recomendacion", controladorRecomendacion.recomendarCualqueira);
 
 //seteamos el puerto en el cual va a escuchar los pedidos la aplicación
 var puerto = '8080';
