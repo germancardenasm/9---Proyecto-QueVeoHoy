@@ -32,7 +32,7 @@ function recomendarSegunSeleccion(req, res, fields){
                 sqlPreferenciasUsuario += " AND "
         sqlPreferenciasUsuario += " puntuacion >= " + puntuacion;
     }
-                
+                   
     con.query(sqlPreferenciasUsuario, function(error, respuestaRecomendadas, fields){
         if(error)
             { return res.status(404).send("Error al recibir peliculas para recomendar")}
@@ -49,7 +49,7 @@ function recomendarCualquiera(req, res, fields){
     con.query("select count(id) as totalRegistros from pelicula", function(error, response, fields){
         if(error)
             { return res.status(404).send("Error al recibir cantiad de peliculas en el recomendador")}
-
+      
         var idPelicula = Math.floor(Math.random()* response[0].totalRegistros)
         
         con.query("select * from pelicula where id =" + idPelicula, function(error, respuestaPelicula, fields){
@@ -59,7 +59,7 @@ function recomendarCualquiera(req, res, fields){
             res.send(JSON.stringify(respuesta))
         })
     })
-}
+} 
 
 module.exports = {
     recomendarSegunSeleccion: recomendarSegunSeleccion,
